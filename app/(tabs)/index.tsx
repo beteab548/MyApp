@@ -11,6 +11,7 @@ export default function HomeScreen() {
        <Button title="Go to sender saving page" onPress={() => router.push('/sendersavingpage')} />
        <Button title="Go to accounts page" onPress={() => router.push('/accounts')} />
         <Button title="Go to reciever saving page" onPress={() => router.push('/recieversavingpage')} />
+          <Button title="dashboard" onPress={() => router.push('/dashboard')} />
     </View>
   );
 }
