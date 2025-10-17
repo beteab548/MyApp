@@ -84,7 +84,7 @@ export default function App() {
       </View>
 
       {/* Input area */}
-   <View style={styles.inputWrapper}>
+  <View style={styles.inputWrapper}>
   <View style={styles.inputBox}>
     <TextInput
       value={query}
@@ -99,11 +99,17 @@ export default function App() {
     />
   </View>
 
-  {/* Floating results card — positioned absolutely so it doesn’t push other elements */}
-  {showResults && (
+  {/* filter results */}
+  {showResults && query.length > 0 && (
     <View style={styles.resultsCardAbsolute}>
       <FlatList
-        data={SAMPLE_RESULTS}
+        data={SAMPLE_RESULTS.filter((item) => {
+          const q = query.toLowerCase();
+          return (
+            item.name.toLowerCase().includes(q) ||
+            item.number.includes(q)
+          );
+        })}
         keyExtractor={(item) => item.id}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
         renderItem={({ item }) => (
@@ -116,17 +122,20 @@ export default function App() {
           >
             <View style={styles.avatarContainer}>
               <View style={styles.avatarPlaceholder}>
-            <Svg width={20} height={20} fill="#970e97ff">
-  <Path stroke="#970e97ff" d="M15 8.5C15 10.433 13.433 12 11.5 12C9.567 12 8 10.433 8 8.5C8 6.567 9.567 5 11.5 5C13.433 5 15 6.567 15 8.5Z" />
-  <Path
-    d="M17.6305 20H5.94623C5.54449 20 5.31716 19.559 5.56788 19.2451C6.68379 17.8479 9.29072 15 12 15C14.7275 15 17.0627 17.8864 18.0272 19.2731C18.2474 19.5897 18.0161 20 17.6305 20Z"
-    stroke="#970e97ff"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  />
-</Svg>
-   </View>
+                <Svg width={20} height={20} fill="#970e97ff">
+                  <Path
+                    stroke="#970e97ff"
+                    d="M15 8.5C15 10.433 13.433 12 11.5 12C9.567 12 8 10.433 8 8.5C8 6.567 9.567 5 11.5 5C13.433 5 15 6.567 15 8.5Z"
+                  />
+                  <Path
+                    d="M17.6305 20H5.94623C5.54449 20 5.31716 19.559 5.56788 19.2451C6.68379 17.8479 9.29072 15 12 15C14.7275 15 17.0627 17.8864 18.0272 19.2731C18.2474 19.5897 18.0161 20 17.6305 20Z"
+                    stroke="#970e97ff"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </Svg>
+              </View>
             </View>
 
             <View style={styles.resultTextBlock}>
@@ -136,21 +145,26 @@ export default function App() {
           </TouchableOpacity>
         )}
         showsVerticalScrollIndicator={false}
+        ListEmptyComponent={() => (
+          <View style={{ padding: 20 }}>
+            <Text style={{ color: "#888", textAlign: "center" }}>
+            </Text>
+          </View>
+        )}
       />
     </View>
   )}
 
-  {/* Accept button — not affected by floating card */}
   <TouchableOpacity
     style={styles.acceptButton}
     onPress={() => {
       console.log("Accepted number:", query);
-      // trigger your backend or navigation here
     }}
   >
     <Text style={styles.acceptButtonText}>Accept</Text>
   </TouchableOpacity>
 </View>
+
 
 
       
