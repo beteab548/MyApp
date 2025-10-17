@@ -25,13 +25,7 @@ export default function TransferScreen() {
       <ScrollView style={styles.list}>
         {transfers.map((item, index) => (
           <TouchableOpacity key={index} style={styles.item}>
-            {/* <Ionicons name="sync" size={28} color="#7E3FF2" style={styles.icon} /> */}
-      {/* <Svg viewBox="0 0 64 64" width={36} height={36} stroke="#800080" stroke-width="10" data-name="Layer 7" id="Layer_7" style={styles.svgicon}>
-  <G transform="rotate(90, 32, 32)" fill="#970e97ff" data-name="Layer 7" id="Layer_7">
-    <Path d="M22.15,39.23a.53.53,0,0,0-.71,0L17,43.72V32A15.06,15.06,0,0,1,32,17a.5.5,0,0,0,.5-.5V12.77a.5.5,0,0,0-.5-.5A19.75,19.75,0,0,0,12.27,32V43.72L7.78,39.23a.5.5,0,0,0-.35-.14h0a.52.52,0,0,0-.35.14L4.46,41.85a.5.5,0,0,0,0,.71l9.79,9.79a.51.51,0,0,0,.36.15.5.5,0,0,0,.35-.15l9.8-9.79a.51.51,0,0,0,0-.71Z"/>
-    <Path d="M59.53,21.44l-9.79-9.79a.5.5,0,0,0-.71,0l-9.8,9.79a.51.51,0,0,0,0,.71l2.62,2.62a.53.53,0,0,0,.71,0L47,20.28V32A15.06,15.06,0,0,1,32,47a.5.5,0,0,0-.5.5v3.69a.5.5,0,0,0,.5.5A19.75,19.75,0,0,0,51.73,32V20.28l4.49,4.49a.5.5,0,0,0,.35.14h0a.52.52,0,0,0,.35-.14l2.61-2.62A.5.5,0,0,0,59.53,21.44Z"/>
-  </G>
-</Svg> */}
+   
 <Image
           source={require('../assets/officeicon.png')} 
            style={styles.officeicon}
