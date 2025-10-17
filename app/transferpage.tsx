@@ -45,7 +45,6 @@ export default function TransferScreen() {
       </View>
 
       <Text style={styles.headerText}>transfer</Text>
-
       <ScrollView style={styles.list}>
         {transfers.map((item, index) => (
           <TouchableOpacity key={index} style={styles.item} onPress={() => handlePress(index)}>
@@ -55,7 +54,6 @@ export default function TransferScreen() {
                 <Path d="M59.53,21.44l-9.79-9.79a.5.5,0,0,0-.71,0l-9.8,9.79a.51.51,0,0,0,0,.71l2.62,2.62a.53.53,0,0,0,.71,0L47,20.28V32A15.06,15.06,0,0,1,32,47a.5.5,0,0,0-.5.5v3.69a.5.5,0,0,0,.5.5A19.75,19.75,0,0,0,51.73,32V20.28l4.49,4.49a.5.5,0,0,0,.35.14h0a.52.52,0,0,0,.35-.14l2.61-2.62A.5.5,0,0,0,59.53,21.44Z"/>
               </G>
             </Svg>
-
             <View style={{ flex: 1 }}>
               <Text style={styles.title}>{item.title}</Text>
               <Text style={styles.subtitle}>{item.subtitle}</Text>
