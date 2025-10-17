@@ -3,10 +3,8 @@ import React from "react";
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 export default function TransferScreen() {
   const transfers = [
-    { title: "AMANUEL EMIRU GISSA-ETB-3879", subtitle: "AMaNuel emIru GISSA" },
- 
+    { title: "AMANUEL EMIRU GISSA-ETB-3879", subtitle: "AMANUEl EMIRU GISSA" },
   ];
-
   return (
     <View style={styles.container}>
       {/* Header */}
@@ -25,8 +23,7 @@ export default function TransferScreen() {
       <ScrollView style={styles.list}>
         {transfers.map((item, index) => (
           <TouchableOpacity key={index} style={styles.item}>
-   
-<Image
+       <Image
           source={require('../assets/officeicon.png')} 
            style={styles.officeicon}
         />
@@ -38,7 +35,6 @@ export default function TransferScreen() {
           </TouchableOpacity>
         ))}
       </ScrollView>
-
       {/* Floating QR button */}
       <TouchableOpacity style={styles.fab}>
         <Ionicons name="qr-code" size={26} color="#fff" />
@@ -46,7 +42,6 @@ export default function TransferScreen() {
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,

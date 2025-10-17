@@ -4,7 +4,6 @@ import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'rea
 
 export default function ReceiptScreen() {
   const router = useRouter();
-
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.card}>
