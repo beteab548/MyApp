@@ -4,7 +4,6 @@ import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'rea
 
 export default function ReceiptScreen() {
   const router = useRouter();
-
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.card}>
@@ -17,7 +16,6 @@ export default function ReceiptScreen() {
 
         <Text style={styles.successText}>Thank You!</Text>
         <Text style={styles.status}>Success</Text>
-        
          </View>
           <Image
           source={require('../assets/shareicon.png')} 
