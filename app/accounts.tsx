@@ -250,7 +250,7 @@ acceptButtonText: {
     marginTop: 8,
     backgroundColor: "#fff",
     borderRadius: 12,
-    paddingVertical: 20,
+    paddingVertical: 30,
     paddingHorizontal: 16,
     elevation: 2,
     shadowColor: "#000",
@@ -270,14 +270,19 @@ acceptButtonText: {
   inputWrapper: {
     marginHorizontal: 18,
     marginTop: 18,
+    
+    
   },
   inputBox: {
     borderWidth: 2,
     borderColor: purple,
     borderRadius: 8,
-    padding: 12,
+    padding: 8,
     minHeight: 56,
     justifyContent: "center",
+    
+
+
   },
   inputText: {
     fontSize: 20,

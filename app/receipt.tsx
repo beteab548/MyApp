@@ -16,7 +16,6 @@ export default function ReceiptScreen() {
 
         <Text style={styles.successText}>Thank You!</Text>
         <Text style={styles.status}>Success</Text>
-        
          </View>
           <Image
           source={require('../assets/shareicon.png')} 
