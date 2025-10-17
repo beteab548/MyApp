@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import React from "react";
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 export default function TransferScreen() {
@@ -6,12 +7,20 @@ export default function TransferScreen() {
     { title: "saving - ETB- 4014", subtitle: "Balance : ETB 1200 .45" },
  
   ];
+function handleBackPress() {
+    // Handle back button press
+    router.back();
+  }
+
+  const handlePress = () => {
+        router.push("/accounts"); 
+  };
 
   return (
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
-        <Ionicons name="arrow-back" size={24} color="#970e97ff" />
+        <Ionicons name="arrow-back" size={24} color="#970e97ff"  onPress={handleBackPress}/>
         
         <View style={styles.headerIcons}>
           <Ionicons name="notifications-outline" size={22} color="#970e97ff" style={{ marginRight: 15 }} />
@@ -24,7 +33,7 @@ export default function TransferScreen() {
       {/* List */}
       <ScrollView style={styles.list}>
         {transfers.map((item, index) => (
-          <TouchableOpacity key={index} style={styles.item}>
+          <TouchableOpacity key={index} style={styles.item} onPress={handlePress}>
    
 <Image
           source={require('../assets/officeicon.png')} 

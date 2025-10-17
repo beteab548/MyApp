@@ -1,8 +1,9 @@
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router"; // ✅ useRouter for navigation
 import React, { useState } from "react";
-import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Svg, { G, Path } from "react-native-svg";
+import WindowsLoader from "./windowsloader";
 
 export default function TransferScreen() {
   const router = useRouter();
@@ -23,11 +24,10 @@ export default function TransferScreen() {
 
   const handlePress = (index: number) => {
     if (index === 0) {
-      // show loading spinner for 2 seconds
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
-        router.push("/sendersavingpage"); // ✅ navigate after delay
+        router.push("/sendersavingpage"); 
       }, 2000);
     }
   };
@@ -73,7 +73,9 @@ export default function TransferScreen() {
       {/* Loading Spinner */}
       {loading && (
         <View style={styles.loadingOverlay}>
-          <ActivityIndicator size="large" color="#970e97ff" />
+          {/* <ActivityIndicator size="large" color="#970e97ff" />
+         */}
+         <WindowsLoader/>
           <Text style={styles.loader}>Loading.....</Text>
         </View>
       )}

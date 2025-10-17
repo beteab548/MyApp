@@ -1,15 +1,20 @@
 import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import React from "react";
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 export default function TransferScreen() {
   const transfers = [
     { title: "AMANUEL EMIRU GISSA-ETB-3879", subtitle: "AMANUEl EMIRU GISSA" },
   ];
+  function handleBackPress() {
+      // Handle back button press
+      router.back();
+    }
   return (
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
-        <Ionicons name="arrow-back" size={24} color="#970e97ff" />
+        <Ionicons name="arrow-back" size={24} color="#970e97ff" onPress={handleBackPress}/>
         
         <View style={styles.headerIcons}>
           <Ionicons name="notifications-outline" size={22} color="#970e97ff" style={{ marginRight: 15 }} />

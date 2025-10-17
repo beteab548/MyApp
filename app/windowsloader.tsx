@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Animated, View } from "react-native";
 
-const WindowsLoader = ({ color = "#970e97ff", size = 60 }: { color?: string; size?: number }) => {
+const WindowsLoader = ({ color = "#bda72cff", size = 100 }: { color?: string; size?: number }) => {
   const numDots = 8;
   const animations = Array.from({ length: numDots }, () => useRef(new Animated.Value(0)).current);
 

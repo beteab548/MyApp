@@ -1,13 +1,15 @@
+import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import React, { useState } from "react";
 import {
-    Dimensions,
-    FlatList,
-    SafeAreaView,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View
+  Dimensions,
+  FlatList,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View
 } from "react-native";
 import Svg, { Path } from "react-native-svg";
 const { width } = Dimensions.get("window");
@@ -38,13 +40,17 @@ const SAMPLE_RESULTS = [
 export default function App() {
   const [query, setQuery] = useState("");
   const [showResults, setShowResults] = useState(true);
-
+  function handleBackPress() {
+      // Handle back button press
+      router.back();
+    }
   return (
     <SafeAreaView style={styles.container}>
       {/* Top bar */}
       <View style={styles.topBar}>
+          {/* <FontAwesome5 name="hand-holding-usd" size={32} color="#970e97ff" /> */}
         <TouchableOpacity style={styles.iconButton}>
-          <Text style={styles.iconText}>‹</Text>
+        <Ionicons name="arrow-back" size={24} color="#970e97ff"  onPress={handleBackPress}/>
         </TouchableOpacity>
 
         <View style={styles.topBarActions}>
@@ -161,18 +167,14 @@ export default function App() {
       console.log("Accepted number:", query);
     }}
   >
-    <Text style={styles.acceptButtonText}>Accept</Text>
+    <Text style={styles.acceptButtonText}>continue</Text>
   </TouchableOpacity>
-</View>
-
-
-
-      
+</View>      
     </SafeAreaView>
   );
 }
 
-const purple = "#970e97ff"; // use to mimic the magenta/purple in screenshot
+const purple = "#970e97ff"; 
 
 const styles = StyleSheet.create({
   container: {
