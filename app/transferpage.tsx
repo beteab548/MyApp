@@ -8,7 +8,10 @@ import WindowsLoader from "./windowsloader";
 export default function TransferScreen() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
-
+function handleBackPress() {
+      // Handle back button press
+      router.back();
+    }
   const transfers = [
     { title: "Transfer to CBE Account", subtitle: "Transfer to CBE Account" },
     { title: "Transfer to CBE/Birr Wallet", subtitle: "Bank to CBE/Birr Wallet transfer" },
@@ -31,12 +34,11 @@ export default function TransferScreen() {
       }, 2000);
     }
   };
-
   return (
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
-        <Ionicons name="arrow-back" size={24} color="#970e97ff" />
+        <Ionicons name="arrow-back" size={24} color="#970e97ff" onPress={handleBackPress}/>
         <View style={styles.headerIcons}>
           <Ionicons name="notifications-outline" size={22} color="#970e97ff" style={{ marginRight: 15 }} />
           <Text style={{ color: "#970e97ff", fontWeight: "500", marginRight: 15 }}>አማ</Text>
