@@ -8,6 +8,8 @@ export default function HomeScreen() {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text style={{ fontSize: 20 }}>Welcome to My App</Text>
       <Button title="Go to Receipt" onPress={() => router.push('/receipt')} />
+              <Button title="Go to transfer page" onPress={() => router.push('/transferpage')} />
+
     </View>
   );
 }
